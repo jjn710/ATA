@@ -1,0 +1,77 @@
+<!--WelcomePage
+
+Welcome page 
+- the hospital id numbers are in a file that also matches the first and last name of the anesthesiologist. 
+- here the should be shown 
+- there are also terms & conditions in this page 
+- to enter the actual system the doctor first have to accept the terms of conditions and that his id matches his own name etc. 
+--> 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ATA</title>
+		<script>
+			
+			//TODO alert voor als er een inlog veld niet is ingevoerd!
+			function click1() {
+				alert("now go to the actual system page");					
+			}	
+			</script>
+		
+		
+		<style>
+			
+			body{
+				background-color: white;
+				
+			}
+			
+			.center{
+				text-align: center;
+				color: black;
+				font-size: 30px;
+				margin-top: 1px;
+    			margin-bottom: 1px;
+    			margin-right: 1px;
+    			margin-left: 1px;
+			}
+			
+			h1 {
+				text-align: center;
+				font: bold; 
+				font-size: 60px;
+				margin-top: 1px;
+    			margin-bottom: 1px;
+    			margin-right: 1px;
+    			margin-left: 1px;
+				}
+
+			.acceptRules{
+				font: bold;
+			}					
+
+			
+		</style>
+
+	</head>
+
+	<body>
+		<h1><img src="ata.jpg" alt="logo" height="7%" width="7%">   ATA   <img src="ata.jpg" alt="logo" height="7%" width="7%"></h1>
+		<p class="center">Anesthesiologist Treatment Assistent</p>
+		<hr>
+		<h2>Welcome <anesthesiologistNAme>to enter the ATA system please read the terms and conditions and accept if you are this person </h2>
+		<p>Terms and conditions<br>
+		The outcome if this system can not be used as the main dicision factor, <br> 
+		and should only be used for assisting purposes</p>
+		<div class="acceptRules", id='button_acceptRules'>
+			<form action="demo_form.asp">
+  			<label for="IdenticalName">I confirm the initals and names are me</label>
+  			<input type="radio" name="IdenticalName" id="name" value="IdenticalName"><br>
+  			<label for="AcceptRules">I accept the Terms and Conditions</label>
+  			<input type="radio" name="AcceptRules" id="AcceptRules" value="accept"><br><br>
+  			<button onclick="click2()">Continue</button> <!-- Als je de bolletjes hem aangeclickt kan je ze neit meer off-clicken? Als men een bolletje niet invult dan error load the actual system page met vragen is -->
+			</form>
+		</div>
+
+
