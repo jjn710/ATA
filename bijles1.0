@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title Tabblad</title>
+		<script>
+			
+			//TODO alert naam die je zelf in voert
+			function click1() {
+				alert("Ga aan je studie zitten!");					
+			}	
+			</script>
+		
+		
+		<style>
+			
+			body{
+				background-color: rgb(0, 0, 255);
+				
+			}
+			
+			h1 {
+				text-align: center;
+				color: rgb(0,255,0);
+				
+			}
+			
+			#button_hoi{
+				padding-left: 100px;
+				color: rgb(0,255,0);
+			}
+			
+		</style>
+
+	</head>
+
+	<body>
+		<h1>Titel 1</h1>
+		<p>Paragraaf 1 als ik op een nieuwe regel wil starten </br> nu zit ik op een nieuwe regel</p>
+		<!-- een image in je html zetten kan op verschillende manieren (img file die uit je eigen map wordt gehaald,
+		een url van internet, img lengte breedte kan in pixels en procenten-->
+		<img src="ik.jpg" alt="hond" height="50%" width="50%">
+		<a href="https://www.facebook.com/sjo.jessen"target="_blank">sjo fb</a>
+		<div>soort onzichtbaar blok / markering waarmee je later alles wat er in staat tegelijkertijd kunt aanpassen(als id/class heeft/)</div>
+		<code>dit komt in het soort lettertype van code taal</code>
+		<br>
+		<br>
+		<br>
+		<hr>
+		<table>
+		  <tr>
+			<th></th>
+			<th>gewicht</th>
+			<th>leeftijd</th>
+			<th>lengte</th>
+		  </tr>
+		  <tr>
+			<th>piet</th>
+			<td>60</td>
+			<td>17</td>
+			<td>150</td>
+		  </tr>
+		  <tr>
+			<th>marieke</th>
+			<td>65</td>
+			<td>19</td>
+			<td>166</td>
+		  </tr>
+		</table>
+		<div id='button_hoi'>
+			<p>hoi</p>
+			<h1>dit staat nog in de div die groen is</h1>
+					<button onclick="click1()">Try it</button>
+			
+				
+
+			</div>
+	</body>
+</html>
+
+
