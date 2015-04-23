@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ATA</title>
+
+		
+		
+		<style>
+			
+			body{
+				background-color: white;
+				
+			}
+			
+			.center{
+				text-align: center;
+				color: black;
+				font-size: 30px;
+				margin-top: 1px;
+    			margin-bottom: 1px;
+    			margin-right: 1px;
+    			margin-left: 1px;
+			}
+			
+			h1 {
+				text-align: center;
+				font: bold; 
+				font-size: 60px;
+				margin-top: 1px;
+    			margin-bottom: 1px;
+    			margin-right: 1px;
+    			margin-left: 1px;
+
+				}
+
+			.inlog{
+				font: bold;
+			}			
+			
+			
+		</style>
+
+	</head>
+
+	<body>
+
+	<div class="numbers">
+       
+	</div>
+		<h1><img src="ata.jpg" alt="logo" height="7%" width="7%">   ATA   <img src="ata.jpg" alt="logo" height="7%" width="7%"></h1>
+		<p class="center">Anesthesiologist Treatment Assistent</p>
+		<hr>
+		<div id="notLoggedIn" style="display:inline">
+			<h2>Welcome to the ATA system</h2>
+			<p>To make use of APA application you have to be registered.<br>
+			Please insert you hospital id number and your password.</p>
+			<div class="inlog", id='button_inlog'>    <!-- dit werkt niet?? waarom is er een hele grote break en niet gewoon een regel?-->
+				<label>Hospital ID number:</label>
+				<input type='text' class='form-control' id='InputHostpitalId' placeholder='Hospital ID number'>
+				<br>
+				<label>Password:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label> 
+				<input type='password' class='form-control' id='password' placeholder='Hospital ID number'>
+				<button onclick="checkId()">Log in</button> <!-- Als men een veld is vergeten in te vullen pop up geven! (alleen dan!!)-->
+			</div>
+		</div>
+
+		<div id="loggedIn" style="display:none">
+			<h2>Welcome <anesthesiologistNAme>to enter the ATA system please read the terms and conditions and accept if you are this person </h2>
+			<p>Terms and conditions<br>
+			The outcome if this system can not be used as the main dicision factor, <br> 
+			and should only be used for assisting purposes</p>
+			<div class="acceptRules", id='button_acceptRules'>
+				<form action="demo_form.asp">
+	  				<label for="IdenticalName">I confirm the initals and names are me</label>
+		  			<input type="radio" name="IdenticalName" id="name" value="IdenticalName"></input><br>
+		  			<label for="AcceptRules">I accept the Terms and Conditions</label>
+		  			<input type="radio" name="AcceptRules" id="AcceptRules" value="accept" ></input><br><br>
+		  			<button onclick="checkId()">Continue</button> <!-- Als je de bolletjes hem aangeclickt kan je ze neit meer off-clicken? Als men een bolletje niet invult dan error load the actual system page met vragen is -->
+				</form>	
+			</div>
+		</div>
+
+<script>
+			
+			//TODO alert voor als er een inlog veld niet is ingevoerd!
+			function click1() {
+				alert("Please make sure all fields are filled in");					
+			}	
+
+			function checkId(){
+
+
+				var HospitalIDNUmber = document.getElementById('InputHostpitalId').value;
+				var password = document.getElementById("password").value;
+
+				if (HospitalIDNUmber=="333444422" && password=="lala"){
+					GoToLoggedIn();
+				}
+				else {
+					alert ("wrong");
+				}
+			}
+			
+			function GoToLoggedIn() {
+				
+				var element = document.getElementById('loggedIn');
+                console.log(element.style.display)
+				if ((element.style.display == 'inline')){
+					console.log("loggedIn staat nu op inline");
+					document.getElementById('loggedIn').style.display = 'none';//set reverse
+				} else {
+					document.getElementById('loggedIn').style.display = 'inline';
+				}
+
+				if (document.getElementById('notLoggedIn').style.display == 'inline'){
+					console.log("notloggedIn staat nu op inline");
+					document.getElementById('notLoggedIn').style.display = 'none';
+				} else {
+					console.log("loggedIn staat nu op none");
+					document.getElementById('notLoggedIn').style.display = 'inline';
+				}
+
+
+
+			}
+			</script>
+		<!--hospitalID number: 333444422 (met password=lala, 1555554444(password=po), 666666221(password=tinkwinky)
+		Only these three Id numbers are now stored in the database and can be logged in with the right password to excess the system -->
+		<!--vanuit deze click button zal er gezocht worden in de database of de gegevens bekent zijn, of deze anesthesist in het ziekenhuis is geregistreedrd en dus kijken of deze bevoegd is om het systeem te gebruiken (via de ict van het ziekenhuis etc moeten de anesthesisten die van het systeem gebruik mogen maken zich aanmelden verificieren etc. ->
+		<!-- er zijn twee opties na het de inlog click button: 1, het inloggen is geaccepteerd, je komt op nieuwe pagina met jou gegevens (naam en achternaam)en de voorwaarden (waarin staat dat er niet uitsluitend op het systeem keuzes mogen worden gemaakt) daarna moet men accepteren aanvinken en doorklikken, dus je accepteerd dat jou gegevens zijn en de voorwaarden ga je mee akkoord!) 2, er komt een pagina waarinstaat dat de gegevens niet bekent zijn bij het systeem en contact opnemen met ict etc. -->
+		<!--na dat voorwaarden zijn geaccepteerd met button GET methode naar het echte werkende systeem pagina-->
+		<!--dan komen de vragen een voor een aan de hand van de knowledge base pagina na elke vraag is een click bottum waardoor het systeem kan sorteren in de data base welke vraag als volgende komt
+-->
+</html>
+
